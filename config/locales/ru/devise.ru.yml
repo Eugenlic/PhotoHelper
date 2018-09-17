@@ -3,74 +3,106 @@
 ru:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      resend_confirmation_instructions: 'Отправка сообщения подтверждения'
+      resend_confirmation_instructions: 'Подтвердите инструкции по подтверждению'
+      confirmed: 'Ваш адрес электронной почты успешно подтвержден.'
+      send_instructions: 'Вы получите электронное письмо с инструкциями о том, как подтвердить свой адрес электронной почты в течение нескольких минут.'
+      send_paranoid_instructions: 'Если ваш адрес электронной почты существует в нашей базе данных, вы получите электронное письмо с инструкциями о том, как подтвердить свой адрес электронной почты в течение нескольких минут.'
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      already_authenticated: 'Вы уже вошли в систему.'
+      inactive: 'Ваша учетная запись еще не активирована.'
+      invalid: 'Недопустимый %{authentication_keys} или пароль.'
+      locked: 'Ваш аккаунт заблокирован.'
+      last_attempt: 'У вас есть еще одна попытка, прежде чем ваша учетная запись будет заблокирована.'
+      not_found_in_database: 'Недопустимый %{authentication_keys} или пароль.'
+      timeout: 'Срок действия вашей сессии истек. Повторите попытку, чтобы продолжить.'
+      unauthenticated: 'Вам необходимо войти в систему или зарегистрироваться, прежде чем продолжить.'
+      unconfirmed: 'Вы должны подтвердить свой адрес электронной почты, прежде чем продолжить.'
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        welcome_email: 'Добро пожаловать %{email}!'
+        confirm_my_account: 'Подтвердите свой аккаунт'
+        subject: 'Инструкции по подтверждению'
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: 'Сбросить инструкции для пароля'
+        someone: 'Кто-то запросил ссылку на изменение вашего пароля. Вы можете сделать это через ссылку ниже.'
+        change_my_password: 'Изменить пароль'
+        ignore_mail: 'Если вы не запрашивали это, пожалуйста, проигнорируйте это письмо.'
+        not_change: 'Ваш пароль не изменится, пока вы не перейдете к ссылке выше и не создадите новую.'
       unlock_instructions:
-        subject: "Unlock instructions"
+        subject: 'Инструкции по разблокировке'
+        been_locked: 'Ваша учетная запись заблокирована из-за чрезмерного количества неудачных попыток.'
+        click_link: 'Нажмите на ссылку ниже, чтобы разблокировать свою учетную запись:'
+        unlock_my_account: 'Разблокировать мою учетную запись'
       email_changed:
-        subject: "Email Changed"
+        subject: 'Email Изменен'
+        unconfirmed_email: 'Мы свяжемся с вами, чтобы уведомить вас о том, что ваша электронная почта изменяется на %{unconfirmed_email}.'
+        resource_email: 'Мы свяжемся с вами, чтобы сообщить вам, что ваш адрес электронной почты был изменен на %{resource.email}'
       password_change:
-        subject: "Password Changed"
+        subject: 'Пароль Изменен'
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: 'Не удалось аутентифицировать вас %{kind} потому что \"%{reason}\".'
+      success: 'Аутентификация успешно завершена %{kind}.'
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
-    registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      change_password: 'Сменить пароль'
+      new_password: 'Новый пароль'
+      confirm_new_password: 'Подтвердите новый пароль'
+      change_my_password: 'Изменить пароль'
       new:
-        characters_minimum: ' минимум %{length} символов'
+        forgot_your_password: 'Забыли пароль?'
+        reset_password: 'Отправить инструкции'
+      no_token: 'Вы не можете получить доступ к этой странице, не используя пароль для сброса. Если вы пришли из пароля для сброса, убедитесь, что вы использовали полный URL-адрес.'
+      send_instructions: 'Вы получите электронное письмо с инструкциями о том, как сбросить пароль за несколько минут.'
+      send_paranoid_instructions: 'Если ваш адрес электронной почты существует в нашей базе данных, вы получите ссылку на восстановление пароля на свой адрес электронной почты через несколько минут.'
+      updated: 'Ваш пароль был успешно изменен. Теперь вы вошли в систему.'
+      updated_not_active: 'Ваш пароль был успешно изменен.'
+    registrations:
+      destroyed: 'До свидания! Ваша учетная запись успешно отменена. Мы надеемся увидеть Вас снова скоро.'
+      edit: 'Редактировать'
+      currently_waiting: 'В настоящее время ожидается подтверждение'
+      leave_blank: 'Оставьте поле пустым, если вы не хотите его менять'
+      need_your_current: 'Нам нужен ваш текущий пароль для подтверждения ваших изменений'
+      update: 'Обновить'
+      cancel_my_account: 'Отменить мою учетную запись'
+      cancel_account: 'Отменить учетную запись'
+      are_you_sure: 'Вы уверены?'
+      back: 'Назад'
+      new:
+        characters_minimum: ' (минимум %{length} символов) '
         sign_up: 'Зарегестрироваться'
         log_in: 'Войти'
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
-      updated: "Your account has been updated successfully."
+      signed_up: 'Добро пожаловать! Вы успешно зарегистрировались.'
+      signed_up_but_inactive: 'Вы успешно зарегистрировались. Однако мы не смогли подписать вас, потому что ваша учетная запись еще не активирована.'
+      signed_up_but_locked: 'Вы успешно зарегистрировались. Однако мы не смогли подписать вас, потому что ваша учетная запись заблокирована.'
+      signed_up_but_unconfirmed: 'На ваш адрес электронной почты отправлено сообщение с ссылкой для подтверждения. Перейдите по ссылке, чтобы активировать свою учетную запись.'
+      update_needs_confirmation: 'Вы успешно обновили свою учетную запись, но нам нужно подтвердить ваш новый адрес электронной почты. Проверьте свой адрес электронной почты и подтвердите свой новый адрес электронной почты.'
+      updated: 'Ваша учетная запись успешно обновлена.'
     sessions:
       new:
         log_in: 'Войти'
         sign_up: 'Зарегестрироваться'
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: 'Вы успешно зашли.'
+      signed_out: 'Вы усешно вышли.'
+      already_signed_out: 'Вы успешно вышли.'
     shared:
       links:
         sign_up: 'Зарегестрироваться'
         forgot_your_password: 'Забыли свой пароль?'
         log_in: 'Войти'
+        did_not_receive: 'Не получили подтверждения?'
+        unlock_instructions: 'Не получили инструкции по разблокировке?'
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      resend_unlock: 'Повторно отправить инструкции по разблокировке'
+      send_instructions: 'Вы получите электронное письмо с инструкциями о том, как разблокировать свою учетную запись за несколько минут.'
+      send_paranoid_instructions: 'Если ваша учетная запись существует, вы получите электронное письмо с инструкциями о том, как разблокировать его в течение нескольких минут.'
+      unlocked: 'Ваша учетная запись была разблокирована успешно. Войдите, чтобы продолжить.'
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: 'было подтверждено, пожалуйста, войдите в систему'
+      confirmation_period_expired: 'должно быть подтверждено в рамках %{period}, запросите новый'
+      expired: 'истек, пожалуйста, запросите новый'
+      not_found: 'не найдено'
+      not_locked: 'не было заблокировано'
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: '1 ошибка запретила это %{resource} от сохранения:'
+        other: '%{count} ошибки запретили это %{resource} от сохранения:'

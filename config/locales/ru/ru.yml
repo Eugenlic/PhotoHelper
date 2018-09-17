@@ -1,1 +1,2 @@
 ru:
+  hello: 'Hello %{email}!'
