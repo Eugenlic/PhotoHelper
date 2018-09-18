@@ -79,7 +79,7 @@ ru:
       updated: 'Ваша учетная запись успешно обновлена.'
     sessions:
       new:
-        log_in: 'Войти'
+        log_in: 'Вход'
         sign_up: 'Зарегестрироваться'
       signed_in: 'Вы успешно зашли.'
       signed_out: 'Вы усешно вышли.'
@@ -88,7 +88,7 @@ ru:
       links:
         sign_up: 'Зарегестрироваться'
         forgot_your_password: 'Забыли свой пароль?'
-        log_in: 'Войти'
+        log_in: 'Вход'
         did_not_receive: 'Не получили подтверждения?'
         unlock_instructions: 'Не получили инструкции по разблокировке?'
     unlocks:
