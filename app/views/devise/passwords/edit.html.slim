@@ -5,13 +5,11 @@ h2
   = f.hidden_field :reset_password_token
   .field
     = f.label :password, t('.new_password')
-    br
     - if @minimum_password_length
       = t('.characters_minimum', length: @minimum_password_length)
     = f.password_field :password, autofocus: true, autocomplete: "new-password"
   .field
     = f.label :password_confirmation, t('.confirm_new_password')
-    br
     = f.password_field :password_confirmation, autocomplete: "off"
   .actions
     = f.submit t('.change_my_password')

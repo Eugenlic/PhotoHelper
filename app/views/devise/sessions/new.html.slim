@@ -1,19 +1,12 @@
-.text-center.d-flex.align-items-center.h-75
-  .container.w-25.p-3
+.text-center.d-flex.align-items-center.h-100
+  .container.w-25
     h3 = t('.log_in')
     
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field.p-2
-        .label
-          = f.label :email
-        .input
-          = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field.p-2
-        .label
-          = f.label :password
-
-        .input
-          = f.password_field :password, autocomplete: "current-password"
+      .form-group
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' , placeholder: 'Email'
+      .form-group
+          = f.password_field :password, autocomplete: "current-password", class: 'form-control' , placeholder: 'Password'
       - if devise_mapping.rememberable?
         .field.p-1.5
           = f.check_box :remember_me
