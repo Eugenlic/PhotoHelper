@@ -1,0 +1,6 @@
+ru:
+  home:
+    index:
+      welcome: 'Добро Пожаловать на PhotoHelper!'
+      sign_up: 'Зарегестрироваться'
+      sign_in: 'Войти'
