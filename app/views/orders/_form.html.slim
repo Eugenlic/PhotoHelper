@@ -1,0 +1,15 @@
+= form_for @order do |f|
+  .form-control
+    f.label :title
+    f.label_field :title
+
+  .form-control
+    f.label :description
+    f.label_field :description
+
+  .form-control
+  f.label :image_url
+  f.label_field :image_url
+
+  .actions
+    = f.submit 't(Оформить заказ)', class: 'btn btn-outline-dark'

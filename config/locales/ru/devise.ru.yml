@@ -58,15 +58,20 @@ ru:
       updated_not_active: 'Ваш пароль был успешно изменен.'
     registrations:
       destroyed: 'До свидания! Ваша учетная запись успешно отменена. Мы надеемся увидеть Вас снова скоро.'
-      edit: 'Редактировать'
-      currently_waiting: 'В настоящее время ожидается подтверждение'
-      leave_blank: 'Оставьте поле пустым, если вы не хотите его менять'
-      need_your_current: 'Нам нужен ваш текущий пароль для подтверждения ваших изменений'
-      update: 'Обновить'
-      cancel_my_account: 'Отменить мою учетную запись'
-      cancel_account: 'Отменить учетную запись'
-      are_you_sure: 'Вы уверены?'
-      back: 'Назад'
+      edit:
+        edit_profile: 'Редактировать профиль'
+        currently_waiting: 'В настоящее время ожидается подтверждение'
+        leave_blank: 'Оставьте поле пустым, если вы не хотите его менять'
+        new_password: 'Новый пароль'
+        need_your_current: 'Текущий пароль для подтверждения ваших изменений'
+        characters_minimum: 'Пароль должен составлять минимум %{length} символов '
+        current_password: 'Введите текущий пароль'
+        confirm_password: 'Подтвердите новый пароль'
+        update: 'Обновить'
+        delete_my_account: 'Удалить имеющуюся учетную запись'
+        delete_account: 'Удалить учетную запись'
+        are_you_sure: 'Вы уверены?'
+        back: 'Назад'
       new:
         characters_minimum: 'Пароль должен составлять минимум %{length} символов '
         sign_up: 'Зарегестрироваться'
@@ -107,3 +112,14 @@ ru:
       not_saved:
         one: '1 ошибка запретила это %{resource} от сохранения:'
         other: '%{count} ошибки запретили это %{resource} от сохранения:'
+  shared:
+    navbar:
+      sign_in: 'Войти'
+      sign_up: 'Зарегестрироваться'
+      my_orders: 'Мои заказы'
+      create_order: 'Сделать заказ'
+      edit_profile: 'Редактировать профиль'
+      exit: 'Выход'
+  home:
+    index:
+      welcome: 'Добро пожаловать на PhotoHelper'

@@ -1,0 +1,18 @@
+nav.navbar.navbar-light.border-bottom.border-dark
+  .container
+    = link_to 'PhotoHelper', root_path, class: 'navbar-brand'
+    .nav.nav-pills
+      - if current_user
+        .nav-item.dropdown
+              = link_to current_user.full_name, '#', { class: 'nav-link dropdown-toggle', data: { toggle: "dropdown" } }
+              .dropdown-menu
+                = link_to t('.my_orders'), orders_path, class: 'dropdown-item'
+                = link_to t('.create_order'), orders_path, method: :post, class: 'dropdown-item'
+                = link_to t('.edit_profile'), edit_user_registration_path, class: 'dropdown-item'
+                = link_to t('.exit'), destroy_user_session_path, method: :delete, class: 'dropdown-item'
+      - else
+        .nav-item.m-1
+          = link_to t('.sign_up'), new_user_registration_path, class: 'btn btn-outline-dark'
+        .nav-item.m-1
+          = link_to t('.sign_in'), user_session_path, class: 'btn btn-outline-dark'
+      
