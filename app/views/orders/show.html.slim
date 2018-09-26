@@ -1,5 +1,7 @@
+.container.text-center.h-75 
+  p = @order.discription
+  .form-group
 
-
-p = @order.discription 
-
-p = image_tag @order.image_url(:large), class: 'img-show' if @order.image?
+    p = image_tag @order.image_url(:large), class: 'img-show' if @order.image?
+  
+    p = link_to t('.back'), orders_path, class: 'btn btn btn-outline-dark mr-2'
