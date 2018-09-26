@@ -1,5 +1,5 @@
-h1 = @order.title
 
-p = @order.description 
 
-p = @order.image_url 
+p = @order.discription 
+
+p = image_tag @order.image_url(:large), class: 'img-show' if @order.image?

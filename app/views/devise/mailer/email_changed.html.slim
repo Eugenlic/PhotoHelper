@@ -1,10 +1,10 @@
 p
-  = t('hello', email: @email) 
+  = t('.hello', email: @email) 
  
 - if @resource.try(:unconfirmed_email?)
   p
-    = t.('unconfirmed_email', unconfirmed_email: @resource.unconfirmed_email)
+    =  t('.unconfirmed_email', unconfirmed_email: @resource.unconfirmed_email)
 
 - else
   p
-    =t.('resource_email', resource_email: @resource.email)
+    = t('.resource_email', resource_email: @resource.email)

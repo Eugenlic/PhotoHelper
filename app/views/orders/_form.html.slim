@@ -1,15 +1,10 @@
-= form_for @order do |f|
-  .form-control
-    f.label :title
-    f.label_field :title
+= form_for @order, html: { multipart: true } do |f|
+  .container
+    .form-group
+      = f.text_area :discription, class: 'form-control', placeholder: t('.discription')
 
-  .form-control
-    f.label :description
-    f.label_field :description
+    .form-group
+      = f.file_field :image 
 
-  .form-control
-  f.label :image_url
-  f.label_field :image_url
-
-  .actions
-    = f.submit 't(Оформить заказ)', class: 'btn btn-outline-dark'
+    .actions
+      = f.submit t('.create_order'), class: 'btn btn-primary'

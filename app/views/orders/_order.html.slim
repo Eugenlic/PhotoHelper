@@ -1,2 +1,9 @@
 = order.id
 = order.discription
+div
+
+=link_to t('.show'), order_path(order), class: 'btn btn-primary'
+
+=link_to t('.edit'), edit_order_path(order), class: 'btn btn-primary'
+
+=link_to t('.delete'), order_path(order), method: :delete, data: {confirm: t('.are_you_sure')}, class: 'btn btn-primary'

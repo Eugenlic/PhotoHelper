@@ -7,7 +7,7 @@ nav.navbar.navbar-light.border-bottom.border-dark
               = link_to current_user.full_name, '#', { class: 'nav-link dropdown-toggle', data: { toggle: "dropdown" } }
               .dropdown-menu
                 = link_to t('.my_orders'), orders_path, class: 'dropdown-item'
-                = link_to t('.create_order'), orders_path, method: :post, class: 'dropdown-item'
+                = link_to t('.create_order'), new_order_path, class: 'dropdown-item'
                 = link_to t('.edit_profile'), edit_user_registration_path, class: 'dropdown-item'
                 = link_to t('.exit'), destroy_user_session_path, method: :delete, class: 'dropdown-item'
       - else

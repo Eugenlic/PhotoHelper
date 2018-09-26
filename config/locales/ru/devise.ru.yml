@@ -123,3 +123,20 @@ ru:
   home:
     index:
       welcome: 'Добро пожаловать на PhotoHelper'
+  orders:
+    form:
+      discription: 'Описание'
+      image: 'Загрузите изображение'
+      create_order: 'Оформить заказ'
+    new:
+      new_order: 'Новый заказ'
+    index:
+      my_orders: 'Мои заказы'
+      edit: 'Редактировать'
+    edit:
+      edit_order: 'Редактировать заказ'
+    order:
+      show: 'Показать'
+      delete: 'Удалить'
+      edit: 'Редактировать'
+      are_you_sure: ' Вы уверены?'
