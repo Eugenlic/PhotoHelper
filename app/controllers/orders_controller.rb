@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[show edit destroy]
+  before_action :set_order, only: %i[show edit destroy update]
 
   def index
     @orders = current_user.orders
@@ -42,6 +42,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:discription, :image)
+    params.require(:order).permit(:description, :image)
   end
 end

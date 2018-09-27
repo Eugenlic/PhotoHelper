@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  discription: MyString
+  description: MyString
   text: MyString
   image_url: MyString
   string: MyString
 
 two:
   name: MyString
-  discription: MyString
+  description: MyString
   text: MyString
   image_url: MyString
   string: MyString

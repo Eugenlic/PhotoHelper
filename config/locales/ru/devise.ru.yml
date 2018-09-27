@@ -127,7 +127,7 @@ ru:
       welcome: 'Добро пожаловать на PhotoHelper'
   orders:
     form:
-      discription: 'Описание'
+      description: 'Описание'
       image: 'Загрузите изображение'
       create_order: 'Оформить заказ'
       back: 'Назад'

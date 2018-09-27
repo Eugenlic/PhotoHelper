@@ -1,7 +1,6 @@
 .text-center.d-flex.align-items-center.h-75
   .container.w-25
-    h2
-      = t('.edit_profile')
+    h2 = t('.edit_profile')
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = devise_error_messages!
       .form-group
@@ -9,7 +8,8 @@
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           = t('.currently_waiting')
           = resource.unconfirmed_email
-
+      .form-group
+        = f.text_field :full_name, class: 'form-control', placeholder: t('.edit_name')
       .form-group
         = t('.leave_blank')
         = f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: t('.new_password')
@@ -21,9 +21,8 @@
           = t('.need_your_current')
           = f.password_field :current_password, autocomplete: "current-password", class: 'form-control', placeholder: t('.current_password') 
       .actions
-        = f.submit t('.update'), class: "btn btn-primary"
+        = f.submit t('.update'), class: "btn btn-outline-dark mr-2"
   
-      = t('.delete_my_account')
-      
-      = button_to t('.delete_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-primary"
-    = link_to t('.back'), :back, class: "btn btn-primary"
+    = t('.delete_my_account')
+    = button_to t('.delete_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-outline-dark mr-2"
+    = link_to t('.back'), :back, class: "btn btn-outline-dark mr-2"

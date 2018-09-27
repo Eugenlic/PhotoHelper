@@ -6,11 +6,15 @@
       = devise_error_messages!
       .form-group
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email'
+
+      .form-group
+        = f.text_field :full_name, class: 'form-control', placeholder: t('.your_name')
+      
       .form-group
         - if @minimum_password_length
         = f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder:  t('.characters_minimum', length: @minimum_password_length)
       .form-group
           = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' , placeholder:  t('.password_confirmation')
       .actions
-        = f.submit t('.sign_up'), class: "btn btn-primary"
+        = f.submit t('.sign_up'), class: "btn btn-outline-dark mr-2"
     = render "devise/shared/links"

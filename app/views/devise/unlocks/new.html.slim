@@ -5,5 +5,5 @@ h2
   .form-group
     = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: t('.email')
   .actions
-    = f.submit t('.resend_unlock'), class: "btn btn-primary"
+    = f.submit t('.resend_unlock'), class: "btn btn-outline-dark mr-2"
 = render "devise/shared/links"
