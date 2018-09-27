@@ -1,0 +1,10 @@
+= form_for @order, html: { class: 'w-50 mx-auto', multipart: true } do |f|
+  .form-group
+    = f.text_area :description, class: 'form-control h-25', placeholder: t('.description')
+  .form-group
+    = f.file_field :image
+  .form-group.row
+    .col-sm.text-center
+      = f.submit t('.create_order'), class: 'btn btn-outline-dark mr-2'
+    .col-sm.text-center
+      = link_to t('.back'), orders_path, class: 'btn btn-outline-dark mr-2'

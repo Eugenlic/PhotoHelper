@@ -1,41 +1,28 @@
 .text-center.d-flex.align-items-center.h-75
-  .container
-    h2
-      = t('.edit')
-      = resource_name.to_s.humanize
+  .container.w-25
+    h2 = t('.edit_profile')
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = devise_error_messages!
-      .field
-        = f.label :email
-        br
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        div
-          = t('.currently_waiting'),
+      .form-group
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email'
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          = t('.currently_waiting')
           = resource.unconfirmed_email
-      .field
-        = f.label :password
-        i
-          = t('.leave_blank')
-        br
-        = f.password_field :password, autocomplete: "new-password"
+      .form-group
+        = f.text_field :full_name, class: 'form-control', placeholder: t('.edit_name')
+      .form-group
+        = t('.leave_blank')
+        = f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: t('.new_password')
         - if @minimum_password_length
           = t('.characters_minimum', length: @minimum_password_length)
-      .field
-        = f.label :password_confirmation
-        br
-        = f.password_field :password_confirmation, autocomplete: "new-password"
-      .field
-        = f.label :current_password
-        i
+      .form-group
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: t('.confirm_password')
+      .form-group
           = t('.need_your_current')
-        br
-        = f.password_field :current_password, autocomplete: "current-password"
+          = f.password_field :current_password, autocomplete: "current-password", class: 'form-control', placeholder: t('.current_password') 
       .actions
-        = f.submit t('.update')
-    h3
-      = t('.cancel_my_account')
-    p
-      | Unhappy? 
-      = button_to t('.cancel_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure' }, method: :delete
-    = link_to t('.back'), :back
+        = f.submit t('.update'), class: "btn btn-outline-dark mr-2"
+  
+    = t('.delete_my_account')
+    = button_to t('.delete_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-outline-dark mr-2"
+    = link_to t('.back'), :back, class: "btn btn-outline-dark mr-2"

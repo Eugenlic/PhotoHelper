@@ -1,0 +1,4 @@
+.container.text-center
+    p.word-break-wrap = @order.description
+    p = image_tag @order.image_url(:large), class: 'w-75' if @order.image?
+    p = link_to t('.back'), orders_path, class: 'position-absolut abtn btn btn-outline-dark'

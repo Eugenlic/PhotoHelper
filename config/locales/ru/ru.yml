@@ -1,2 +1,3 @@
 ru:
   hello: 'Hello %{email}!'
+  app_name: 'PhotoHelper'
