@@ -1,5 +1,7 @@
 .border-bottom.border-dark.p-2
   .d-flex.mb-2
+    .mr-auto.position-absolute 
+      lable class="badge badge-#{order.status}" = order.status
     = image_tag order.image_url(:thumb), class: 'mr-2' if order.image?
     span.word-break-wrap = order.description
   =link_to t('.show'), order_path(order), class: 'btn btn-outline-dark mr-2'
