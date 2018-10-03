@@ -70,3 +70,5 @@ gem "mini_magick"
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'slim'
+gem 'draper'
+gem 'pundit'

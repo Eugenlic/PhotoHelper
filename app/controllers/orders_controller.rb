@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit destroy update]
+  before_action :authenticate_user!
 
   def index
     @orders = current_user.orders
@@ -43,5 +44,9 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:description, :image)
+  end
+
+  def authorize_user
+    authorize! Order
   end
 end
