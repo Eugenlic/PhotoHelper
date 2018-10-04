@@ -1,0 +1,5 @@
+= semantic_form_for [:admin, @order] do |f|
+  = f.inputs do 
+    = f.input :price, as: :number, step: 0.01
+  = f.submit t('active_admin.to_value')
+
