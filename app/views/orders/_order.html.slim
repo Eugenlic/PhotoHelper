@@ -2,8 +2,14 @@
   .d-flex.mb-2
     .mr-auto.position-absolute 
       lable class="badge badge-#{order.status}" = order.status
-    = image_tag order.image_url(:thumb), class: 'mr-2' if order.image?
-    span.word-break-wrap = order.description
-  =link_to t('.show'), order_path(order), class: 'btn btn-outline-dark mr-2'
-  =link_to t('.edit'), edit_order_path(order), class: 'btn btn-outline-dark mr-2'
-  =link_to t('.delete'), order_path(order), method: :delete, data: {confirm: t('.are_you_sure')}, class: 'btn btn-outline-dark mr-2'
+    = image_tag order.image_url(:normal), class: 'mr-2' if order.image?
+    .description
+      span.word-break-wrap = order.description
+      p = order.price if order.valuated?
+      p = order.price if order.in_work?
+      p = order.price if order.ready?
+  = link_to t('.show'), order_path(order), class: 'btn btn-outline-dark mr-2' unless order.ready?
+  = link_to t('.edit'), edit_order_path(order), class: 'btn btn-outline-dark mr-2' if order.considered?
+  = link_to t('.delete'), order_path(order), method: :delete, data: {confirm: t('.are_you_sure')}, class: 'btn btn-outline-dark mr-2' if order.considered?
+  = link_to t('.to_accept'), accept_orders_path(id: order.id), method: :post, class: 'btn btn-outline-dark mr-2' if order.valuated?
+  = link_to t('.cancel'), cancel_orders_path(id: order.id), method: :post, class: 'btn btn-outline-dark mr-2' if order.valuated?

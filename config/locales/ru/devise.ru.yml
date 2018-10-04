@@ -143,5 +143,7 @@ ru:
       delete: 'Удалить'
       edit: 'Редактировать'
       are_you_sure: ' Вы уверены?'
+      to_accept: 'Принять'
+      cancel: 'Отменить'
     show:
       back: 'Назад'

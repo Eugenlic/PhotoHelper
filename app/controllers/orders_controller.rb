@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[show edit destroy update]
+  before_action :set_order, only: %i[show edit destroy update accept cancel]
   before_action :authenticate_user!
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.default_sort
   end
 
   def show; end
@@ -34,6 +34,16 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     redirect_to orders_path
+  end
+
+  def accept
+    @order.in_work! if @order.valuated?
+    redirect_to @order
+  end
+
+  def cancel
+    @order.cancel! if @order.valuated?
+    redirect_to @order
   end
 
   private

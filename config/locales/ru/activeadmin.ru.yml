@@ -138,3 +138,9 @@ ru:
       block: "Список"
       grid: "Сетка"
       blog: "Блог"
+    to_value: 'Оценить'
+    attach_photo: 'Прикрепить фото'
+    resource:
+      show:
+        to_value: 'Оценить'
+        attach_photo: 'Прикрепить фото'
