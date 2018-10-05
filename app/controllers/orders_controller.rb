@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[show edit destroy update accept cancel]
   before_action :authenticate_user!
+  before_action :set_order, only: %i[show edit destroy update accept cancel]
+  before_action :check_ready, only: %i[show edit]
 
   def index
     @orders = current_user.orders.default_sort
@@ -49,14 +50,15 @@ class OrdersController < ApplicationController
   private
 
   def set_order
-    @order = Order.find(params[:id])
+    @order = current_user.orders.where(id: params[:id]).first
+    redirect_to orders_path unless @order.present?
   end
 
   def order_params
     params.require(:order).permit(:description, :image)
   end
 
-  def authorize_user
-    authorize! Order
+  def check_ready
+    redirect_to orders_path if @order.ready?
   end
 end
