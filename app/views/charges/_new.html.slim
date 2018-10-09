@@ -1,0 +1,11 @@
+
+= form_tag pay_orders_path(id: order.id) do
+  = javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+    data: { key: ENV['STRIPE_PUBLIC_KEY'],
+      amount: order.price * 100,
+      email: order.user.email,
+      name: 'PhotoHelper',
+      description: order.description,
+      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+      locale: I18n.locale},
+    class: 'stripe-button'
