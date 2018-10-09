@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[show edit destroy update accept cancel]
   before_action :authenticate_user!
+  before_action :set_order, only: %i[show edit destroy update accept cancel pay]
+  before_action :check_ready, only: %i[show edit]
 
   def index
     @orders = current_user.orders.default_sort
@@ -44,6 +45,23 @@ class OrdersController < ApplicationController
   def cancel
     @order.cancel! if @order.valuated?
     redirect_to @order
+  end
+
+  def pay
+    charge = Stripe::Charge.create(
+      amount: (@order.price * 100).to_i,
+      description: @order.description,
+      currency: 'usd',
+      source: params[:stripeToken]
+    )
+    if charge.present?
+      @order.completed!
+      flash[:notice] = 'Оплата успешно прошла!'
+      redirect_to @order
+    end
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to @orders_path
   end
 
   private

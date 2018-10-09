@@ -13,3 +13,4 @@
   = link_to t('.delete'), order_path(order), method: :delete, data: {confirm: t('.are_you_sure')}, class: 'btn btn-outline-dark mr-2' if order.considered?
   = link_to t('.to_accept'), accept_orders_path(id: order.id), method: :post, class: 'btn btn-outline-dark mr-2' if order.valuated?
   = link_to t('.cancel'), cancel_orders_path(id: order.id), method: :post, class: 'btn btn-outline-dark mr-2' if order.valuated?
+  = render partial: 'charges/new', locals: { order: order } if order.ready?
